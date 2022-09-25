@@ -106,6 +106,20 @@ o
 ```
 DATABASE_URL="mysql://sammy:your_password@localhost:3306/my-blog"
 ```
+In schema.prisma wir müssen ändern:
+```
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+o
+```
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+```
 Ändern Sie die Anmeldedaten für die Datenbank unbedingt auf jene, die Sie in der Docker Compose-Datei angegeben haben. Um mehr über das Format der Verbindungs-URL zu erfahren, besuchen Sie die Prisma-Dokumentation.
 
 Wenn Sie damit fertig sind, speichern und schließen Sie die Datei.
